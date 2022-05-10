@@ -1,0 +1,249 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+:root{
+	--orange:  #E67E22;
+	--red: #B8424C;
+	--blue:  #2732AE;
+	--yellow: #AEA327;
+	--green: #196F3D;
+	--gray: #ABB2B9;
+}
+
+
+body{
+	background: var(--green);
+	min-width: 1200px;
+}
+.titulo{
+	text-align: center;
+	background: transparent;
+	color: white;
+	margin-top: 20px;
+}
+.casa{
+	width: 920px;
+	height: 500px;
+	margin: 50px 0px 0px 50px;
+	position: relative;
+}
+.casa__techo{
+	height: 200px;
+	width: 895px;
+	background: linear-gradient(45deg, rgb(220, 220, 220) 279px, black 280px, black 283px, rgb(220, 220, 220) 285px);
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+}
+.techo__triangulo{
+	height: 100%;
+	width: 200px;
+	background: rgb(220, 220, 220);;
+	position: relative;
+	box-sizing: border-box;
+	box-sizing: border-box;
+}
+.techo__triangulo--1{
+	width: 285px;
+	height: 300px;
+	border: 0px solid white;
+	background: var(--green);
+	position: absolute;
+	top: -155px;
+	left: -146px;
+	transform: rotate(-45deg);
+}
+.techo__triangulo--1::before{
+	content: '';
+	width: 100%;
+	height: 5px;
+	background: black;
+	position: absolute;
+	bottom: 0;
+}
+.casa__piso{
+	box-sizing: border-box;
+	width: 900px;
+	height: 300px;
+	background:var(--orange);
+	border: 5px solid black;
+	position: relative;
+}
+.piso__cuadrado{
+	background: var(--orange);
+	width: 400px;
+	height: 100%;
+	position: relative;
+	border-right: 5px solid black;
+	box-sizing: border-box;
+}
+
+.piso__cuadrado__puerta{
+	width: 80px;
+	height: 150px;
+	background: var(--gray);
+	position: absolute;
+	bottom: 0;
+	left: 150px;
+	border-radius: 5px 5px 0 0;
+	transition: .5s linear;
+}
+.piso__cuadrado__puerta:hover{
+	background: black;
+}
+.ventana{
+	position: absolute;
+	width: 150px;
+	height: 100px;
+	top: 100px;
+	right: 150px;
+	background: white;
+	box-sizing: border-box;
+	border: 5px solid var(--red);
+	background: rgb(220, 220, 220);
+}
+
+.ventana::before{
+	content: " ";
+	display: block;
+	width: 5px;
+	height: 100%;
+	background: var(--red);
+	margin: auto;
+}
+.ventana::after{
+	content: " ";
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	background: var(--red);
+	top: 47px;
+}
+.persona{
+	position: absolute;
+	bottom: 190px;
+	right: 0;
+}
+.persona--parte{
+	background: black;
+	position: absolute;
+}
+.cabeza{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 3px solid black;
+	box-sizing: border-box;
+	background: white;
+	top: 0;
+	left: 50px;
+	position: absolute;
+	background: white;
+}
+.ojo{
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: black;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.ojo-1{
+	top: 10px;
+}
+.ojo-2{
+	left: 20px;
+}
+.sonrisa{
+	width: 15px;
+	height: 3px;
+	background: black;
+	position: absolute;
+	top: 25px;
+	left: 10px;
+}
+.cuerpo{
+	width: 3px;
+	height: 100px;
+	top: 50px;
+	left: 75px;
+}
+.brazo,
+.pierna{
+	width: 3px;
+	height: 50px;
+
+}
+.brazo-1{
+	top: 50px;
+	left: 58px;
+	transform: rotate(45deg);
+}
+.brazo-2{
+	top: 50px;
+	left: 93px;
+	transform: rotate(-45deg);
+}
+.pierna-1{
+	left: 63px;
+	top: 145px;
+	transform: rotate(30deg);
+}
+.pierna-2{
+	left: 88px;
+	top: 145px;
+	transform: rotate(-30deg);
+}
+
+.sol{
+	width: 80px;
+	height: 80px;
+	background: radial-gradient(var(--yellow), var(--red));
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: -150px;
+	transition: 1s linear;
+}
+.contenedor{
+
+}
+.contenedor > .usuarios{
+	min-width: 200px;
+	transition: 1s linear;
+	opacity: 0;
+	color: white;
+	z-index: -100000 ;
+}
+.contenedor__active > .usuarios{
+	opacity: 1;
+	color: black;
+	z-index: 100000 ;
+}
+.usuarios{
+	padding: 15px;
+	background: rgba(255, 255, 255, .8);
+	position: absolute;
+}
+.usuarios h3{
+	border-bottom: 2px solid black;
+	margin-bottom: 15px;
+}
+.usuarios a{
+	text-decoration: none;
+	color: var(--blue);
+}
+.usuarios a:hover{
+	text-decoration: underline;
+	color: black;
+}
+.casa__piso,
+.piso__cuadrado,
+.casa__techo,
+.piso__cuadrado__puerta:hover,
+.sol,
+.ventana,
+.cabeza:hover{
+	cursor: pointer;
+}
